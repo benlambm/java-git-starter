@@ -8,34 +8,52 @@ Use whichever code IDE editor you like.
 
 ## What you need
 
-- Git
+- **Git**
 - **JDK 25** (Temurin / Adoptium is the usual free build)
 - One of:
   - Eclipse IDE for Java Developers (2025-09 or newer — earlier releases do
     not know about Java 25)
   - VS Code or Cursor, with the recommended **Extension Pack for Java**
 
+## Get the code
+
+Your IDE can do the clone for you — no ZIP download, and no `git clone` in a
+terminal first. Every route below asks for the same clone URL:
+
+```text
+https://github.com/benlambm/java-git-starter.git
+```
+
 ## Open in VS Code or Cursor
 
-1. Open this repository's top-level folder (the folder that contains this
-   README), not a parent folder and not a subfolder.
-2. Accept the pop-up recommending the **Extension Pack for Java**.
-3. Open `src/Main.java`.
-4. Click **Run** above the `main` method.
+1. Start VS Code or Cursor with no folder open.
+2. Click **Clone Repository**. It is on the Welcome screen, and also in the
+   **Source Control** panel in the left sidebar.
+3. Paste the clone URL above and press **Enter**.
+4. Pick the folder to clone into, then choose **Open** when it offers to open
+   the result.
+5. Accept the pop-up recommending the **Extension Pack for Java**.
+6. Open `src/Main.java` and click **Run** above the `main` method.
 
 ## Open in Eclipse
 
-1. **File → Import…**
-2. **General → Existing Projects into Workspace**, then **Next**.
-3. Set **Select root directory** to this repository's top-level folder.
-4. Confirm `java-git-starter` is checked. Leave **Copy projects into
-   workspace** UNCHECKED.
-5. **Finish**, then open `src/Main.java` and choose **Run As → Java
-   Application**.
+1. Check that Eclipse's Git support is installed: **Help → About Eclipse IDE
+   → Installation Details**, then look for **EGit**. The "Eclipse IDE for
+   Java Developers" package already includes it. If it is missing, install it
+   from **Help → Eclipse Marketplace…** and search for *EGit*.
+2. **File → New → Project…**
+3. Expand **Git**, choose **Projects from Git** (newer releases label it
+   **Projects from Git (with smart import)**), then **Next**.
+4. Choose **Clone URI**, then **Next**.
+5. Paste the clone URL above into **URI**. The host and path fields fill in
+   by themselves. **Next**.
+6. Accept the defaults for the branch selection and the local destination
+   folder, then **Finish**.
+7. Open `src/Main.java` and choose **Run As → Java Application**.
 
-Why step 4 says unchecked: copying into the workspace would give Eclipse its
-own private duplicate of the files, and your Git commits would stop matching
-what you are editing.
+Eclipse imports the project in place, in the folder it just cloned into,
+rather than copying it into the workspace. That is what you want: your Git
+commits stay matched to the files you are actually editing.
 
 ## Run the tests
 
@@ -49,24 +67,10 @@ exercises** below.
   **Run As → JUnit Test**
 - **VS Code / Cursor:** click the beaker icon in the left sidebar, or the
   arrow in the gutter next to a test method
-- **Terminal:** `Terminal → Run Test Task`, or run it by hand:
-
-```text
-java -jar lib/junit-platform-console-standalone-1.14.4.jar execute --class-path bin --scan-class-path --details=tree
-```
-
-That last command is byte-for-byte identical in macOS Terminal, Windows
-PowerShell, and Windows Command Prompt. It reads the compiled classes your
-IDE already put in `bin`, so compile first (opening the project in either IDE
-does this automatically).
 
 ## The six exercises
 
-`src/edu/vwcc/itp220mod1/` holds six classes. Each one has a method that is a
-**stub** — it returns `""`, `false`, or `0.0` so the file still compiles, but
-it does no real work yet. Filling those in is the assignment.
-
-Every class starts with an `Instructions:` comment saying exactly what its
+`src/edu/vwcc/itp220mod1/` holds six classes. Every class starts with an `Instructions:` comment saying exactly what its
 method must do. The matching file in `test/edu/vwcc/itp220mod1/` checks it.
 
 | Class | What its method does |
@@ -108,17 +112,4 @@ You are finished when all 28 tests pass. The three tests in
 `test/MainTest.java` already pass on a fresh clone — `Main.greet` is written
 for you, as a worked example of the same shape of problem: a method that takes
 values in, returns a value out, and is tested directly.
-
-## Adding another JAR library
-
-1. Put the `.jar` in `lib/`.
-2. Eclipse: **Project → Properties → Java Build Path → Libraries →
-   Classpath → Add JARs…** (pick it from inside this project).
-   VS Code / Cursor: it is picked up automatically from `lib/`, but you must
-   still add it in Eclipse so the shared `.classpath` records it.
-3. Commit **both** the JAR and the changed `.classpath`.
-
-Use the project-relative path (`lib/thing.jar`), never an absolute path like
-`C:\Users\you\Downloads\thing.jar`. Absolute paths break on every other
-computer.
 
