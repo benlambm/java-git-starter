@@ -19,9 +19,7 @@ public class Main {
      * @return the greeting, for example "Hello, Java!"
      */
     public static String greet(String name) {
-        if (name == null || name.isBlank()) {
-            name = "world";
-        }
-        return "Hello, " + name + "!";
+        // TODO: your code goes here
+        return "";
     }
 }

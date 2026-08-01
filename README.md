@@ -61,7 +61,7 @@ commits stay matched to the files you are actually editing.
 The `test/` folder holds 28 tests across seven files. Nothing there has a
 `main` method — JUnit finds and runs the methods marked `@Test` for you.
 
-Most of them fail on a fresh clone. That is on purpose — see **The six
+All of them fail on a fresh clone. That is on purpose — see **The six
 exercises** below.
 
 - **Eclipse:** right-click the `test` folder, or a single test file →
@@ -85,9 +85,14 @@ method must do. The matching file in `test/edu/vwcc/itp220mod1/` checks it.
 
 That order is roughly easiest to hardest, but you can work in any order.
 
+One more stub lives outside that folder: `Main.greet` in `src/Main.java`,
+checked by `test/MainTest.java`. Its javadoc is the spec — a blank or null
+name falls back to `"world"`, so `greet("Ada")` returns `Hello, Ada!`. Start
+there if you want the smallest possible first win.
+
 ### How to work through them
 
-1. **Run the tests first.** On a fresh clone **25 of the 28 fail**. That is the
+1. **Run the tests first.** On a fresh clone **all 28 fail**. That is the
    correct starting point, not something you broke. Each failing test is one
    to-do item.
 2. **Pick one class.** Read its `Instructions:` comment, then open its test
@@ -109,8 +114,8 @@ expected: <Fizz> but was: <>
 
 That one says your method returned an empty String where `"Fizz"` belonged.
 
-You are finished when all 28 tests pass. The three tests in
-`test/MainTest.java` already pass on a fresh clone — `Main.greet` is written
-for you, as a worked example of the same shape of problem: a method that takes
-values in, returns a value out, and is tested directly.
+You are finished when all 28 tests pass. That count includes the three in
+`test/MainTest.java` covering `Main.greet` — the same shape of problem as the
+six: a method that takes values in, returns a value out, and is tested
+directly.
 
