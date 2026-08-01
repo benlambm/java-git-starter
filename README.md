@@ -9,10 +9,11 @@ Use whichever code IDE editor you like.
 ## What you need
 
 - **Git**
-- **JDK 25** (Temurin / Adoptium is the usual free build)
+- **JDK 21 or newer** (Temurin / Adoptium is the usual free build). 21 is a
+  long-term-support release, so it is the safe pick, but a newer JDK works too.
 - One of:
-  - Eclipse IDE for Java Developers (2025-09 or newer — earlier releases do
-    not know about Java 25)
+  - Eclipse IDE for Java Developers (2023-12 or newer — earlier releases do
+    not know about Java 21)
   - VS Code or Cursor, with the recommended **Extension Pack for Java**
 
 ## Get the code

@@ -8,7 +8,7 @@ Avoid complex patterns and refactors. Keep it novice level.
 
 ## What this is
 
-A small Java 25 project for learning Java and unit testing.
+A small Java 21 project for learning Java and unit testing.
 
 ```
 src/ is source     test/  is unit tests
@@ -22,7 +22,7 @@ These make the folder open correctly in Eclipse, VS Code, and Cursor alike.
 
 ## Code style
 
-Java 25, four spaces. Coursework classes go in package
+Java 21, four spaces. Coursework classes go in package
 `edu.vwcc.itp220mod1`; `Main` stays in the default package. Beginner-legible
 over clever — no streams, lambdas, or records unless asked. Keep logic out of
 `main` so it can be tested. Comments explain *why*.
