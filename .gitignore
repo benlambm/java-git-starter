@@ -14,6 +14,7 @@ out/
 target/
 build/
 *.class
+*.zip
 
 # --- Secrets and local environment -------------------------------------------
 .env
